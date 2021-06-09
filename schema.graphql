@@ -1,0 +1,7 @@
+type Contribution @entity {
+  id: ID!
+  contributorAddress: String!
+  amount: String!
+  parachainId: String!
+  timestamp: String!
+}

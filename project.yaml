@@ -1,0 +1,17 @@
+specVersion: 0.0.1
+description: Crowdloan contributions tracker
+repository: git@github.com:valentunn/subquery-crowdloan-contributions.git
+schema: ./schema.graphql
+network:
+  endpoint: wss://kusama.api.onfinality.io/public-ws
+dataSources:
+  - name: main
+    kind: substrate/Runtime
+    startBlock: 7828200
+    mapping:
+      handlers:
+        - handler: handleEvent
+          kind: substrate/EventHandler
+          filter:
+            module: crowdloan
+            method: Contributed
